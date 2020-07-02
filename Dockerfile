@@ -1,4 +1,4 @@
-FROM nvidia/cuda:9.0-cudnn7-devel
+FROM nvidia/cuda:9.0-cudnn7-devel-ubuntu16.04
 
 # Install system dependencies
 RUN apt-get update \
@@ -11,7 +11,7 @@ RUN apt-get update \
 # Install python miniconda3 + requirements
 ENV MINICONDA_HOME="/opt/miniconda"
 ENV PATH="${MINICONDA_HOME}/bin:${PATH}"
-RUN curl -o Miniconda3-latest-Linux-x86_64.sh https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh \
+RUN curl -o Miniconda3-latest-Linux-x86_64.sh https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/Miniconda3-latest-Linux-x86_64.sh \
     && chmod +x Miniconda3-latest-Linux-x86_64.sh \
     && ./Miniconda3-latest-Linux-x86_64.sh -b -p "${MINICONDA_HOME}" \
     && rm Miniconda3-latest-Linux-x86_64.sh
