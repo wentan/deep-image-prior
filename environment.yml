@@ -1,6 +1,6 @@
 name: deep-image-prior
 channels:
-- pytorch
+- https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
 - defaults
 dependencies:
 - jupyter
